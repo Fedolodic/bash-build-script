@@ -39,3 +39,10 @@ do
     cp $filename build/.
   fi
 done
+
+# List files in the build/ directory for user
+cd build/
+pwd
+echo "Build version $version contains:"
+ls -alt
+cd ..
