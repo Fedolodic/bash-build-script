@@ -13,3 +13,15 @@ read -a splitfirstline <<< $firstline
 # Get value of script version
 version=${splitfirstline[1]}
 echo "You are building version" $version
+
+# Give user chance to exit script if they need
+# to make a change to the version
+echo 'Do you want to continue? (enter "1" for yes, "0" for no)'
+read versioncontinue
+
+if [ $versioncontinue -eq 1 ]
+then
+  echo "OK"
+else
+  echo "Please come back when you are ready"
+fi
