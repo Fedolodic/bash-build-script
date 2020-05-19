@@ -25,3 +25,17 @@ then
 else
   echo "Please come back when you are ready"
 fi
+
+# Copy every file from source/ to build/
+# except for secretinfo.md
+for filename in source/*
+do
+  # Check if filename is "source/secretinfo.md"
+  if [ "$filename" == "source/secretinfo.md" ]
+  then
+    echo "Not copying" $filename
+  else
+    echo "Copying" $filename
+    cp $filename build/.
+  fi
+done
